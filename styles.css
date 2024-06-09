@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --dstRdClr: hsl(0, 36%, 70%);
+  --sftRd: hsl(0, 93%, 68%);
+  --drkGryRd: hsl(0, 6%, 24%);
+
+  --jfnFnt: "Josefin Sans", sans-serif;
+
+  /* 
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-family: var(--jfnFnt);
+    min-height: 100vh;
+    background-image: url(./img/bg-pattern-desktop.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .head {
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 10px;
+  }
+
+  span {
+    color: var(--dstRdClr);
+    font-weight: 300;
+    font-size: 4.4rem;
+  }
+
+  .para {
+    color: var(--dstRdClr);
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    max-width: 27rem;
+  }
+
+  .hero_img {
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-left: 4rem;
+  }
+
+  .info {
+    padding: 4rem 4rem 0 9rem;
+  }
+
+  .value_section {
+    margin-top: 6rem;
+  }
+
+  .signupForm {
+    position: relative;
+  }
+
+  input {
+    padding: 1rem 0 1rem 1.3rem;
+    width: 78%;
+    border-radius: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    margin-top: 2rem;
+  }
+
+  input:focus {
+    outline: 0;
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+
+  input::placeholder {
+    color: rgba(128, 128, 128, 0.5);
+    font-family: var(--jfnFnt);
+  }
+
+  .signupForm.success input {
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+
+  .signupForm.error input {
+    border-color: var(--sftRd);
+  }
+
+  .errorIcon {
+    height: 18px;
+    position: absolute;
+    left: 58%;
+    bottom: 15px;
+
+    visibility: hidden;
+  }
+
+  .signupForm.error .errorIcon {
+    visibility: visible;
+  }
+
+  .submitArrow {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    position: absolute;
+    left: 65%;
+    bottom: -1px;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .submitArrow:hover {
+    transform: scale(1.05);
+    background-color: var(--dstRdClr);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .submitArrow:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  small {
+    position: absolute;
+    color: var(--sftRd);
+    left: 3%;
+    bottom: -20px;
+    font-weight: 600;
+    font-size: 12px;
+
+    visibility: hidden;
+  }
+  .signupForm.error small {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-family: var(--jfnFnt);
+    min-height: 100vh;
+    background-image: url(./img/bg-pattern-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .value_section {
+    margin-top: 1rem;
+    background-image: url(./img/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .head {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 10px;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  span {
+    color: var(--dstRdClr);
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .para {
+    color: var(--dstRdClr);
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    max-width: 27rem;
+    text-align: center;
+  }
+
+  .hero_img {
+    display: none;
+    background: url(./img/hero-mobile.jpg); /* Ensure the path is correct */
+    background-position: top;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-left: 4rem;
+  }
+
+  .info {
+    padding: 2rem;
+  }
+
+  .value_section {
+    padding-top: 14rem;
+  }
+
+  .signupForm {
+    position: relative;
+  }
+
+  input {
+    padding: 1rem 0 1rem 1.3rem;
+    width: 68%;
+    border-radius: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    margin-top: 1rem;
+  }
+
+  input:focus {
+    outline: 0;
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+
+  input::placeholder {
+    color: rgba(128, 128, 128, 0.5);
+    font-family: var(--jfnFnt);
+  }
+
+  .signupForm.success input {
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+
+  .signupForm.error input {
+    border-color: var(--sftRd);
+  }
+
+  .errorIcon {
+    height: 18px;
+    position: absolute;
+    left: 68%;
+    bottom: 15px;
+    visibility: hidden;
+  }
+
+  .signupForm.error .errorIcon {
+    visibility: visible;
+  }
+
+  .submitArrow {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .submitArrow:hover {
+    transform: scale(1.05);
+    background-color: var(--dstRdClr);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .submitArrow:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  small {
+    position: absolute;
+    color: var(--sftRd);
+    left: 22%;
+    bottom: -20px;
+    font-weight: 600;
+    font-size: 12px;
+    visibility: hidden;
+  }
+
+  .signupForm.error small {
+    visibility: visible;
+  }
+}
